@@ -1,0 +1,14 @@
+#MHDL Ex2
+DEFINE EX2
+
+#Components
+-> How to define components
+COMPONENT mix1 is MIXER
+	of stdlib
+
+#Connections
+CONNECTIONLIST:
+	input1 CONNECTS TO mix1;
+	input2 CONNECTS TO mix1;
+	mix1 CONNECTS TO output1;
+END LIST;

@@ -1,0 +1,11 @@
+DEFINE EX1
+
+COMPONENT mix1 is MIXER
+	of stdlib
+
+CONNECTIONLIST:
+	input1 CONNECTS TO mix1;
+	input2 CONNECTS TO mix1;
+	mix1 CONNECTS TO output1;
+END LIST;
+
