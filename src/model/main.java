@@ -51,6 +51,7 @@ public class main {
 
         System.out.println(file.getName().substring(0,file.getName().length()-5) + ".xml");
         String dir = "examples/xml/";
+
         liser.writer = new PrintWriter( dir + file.getName().substring(0,file.getName().length()-5) + ".xml");
 
         walker.walk(liser,designContext);

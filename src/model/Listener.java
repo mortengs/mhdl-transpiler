@@ -33,7 +33,6 @@ public class Listener extends MHDLBaseListener {
 
     @Override
     public void enterEntity(MHDLParser.EntityContext ctx) {
-        //Stay away from entities for the moment?
         super.enterEntity(ctx);
     }
 
@@ -45,8 +44,20 @@ public class Listener extends MHDLBaseListener {
     @Override
     public void enterComponents(MHDLParser.ComponentsContext ctx) {
         //Check to see if the component exists in the library?
-        writer.println("<ListOfArcComponents>");
+        writer.println(indent + "<ListOfArcComponents>");
         indentInc();
+        for(int i = 0; i < ctx.IDENTIFIER().size(); i += i +2){
+            writer.println(indent + "<ArcComponentProperties>");
+            indentInc();
+            writer.print(indent +"<ID>");
+            writer.print(ctx.IDENTIFIER().get(i));
+            writer.println("</ID>");
+            writer.print(indent + "<ArComponentType>");
+            writer.print(ctx.IDENTIFIER().get(i+1));
+            writer.println("</ArcComponentType>");
+            indentDec();
+            writer.println(indent + "</ArcComponentProperties>");
+        }
     }
 
     @Override
