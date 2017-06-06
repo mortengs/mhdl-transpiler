@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 public class Listener extends MHDLBaseListener {
     PrintWriter writer;
     private String indent = "";
+    private int conn = 1;
 
     @Override
     public void enterDesign(MHDLParser.DesignContext ctx) {
@@ -62,7 +63,8 @@ public class Listener extends MHDLBaseListener {
 
     @Override
     public void exitComponents(MHDLParser.ComponentsContext ctx) {
-        //End the components
+        indentDec();
+        writer.println(indent + "</ListOfArcComponents>");
         super.exitComponents(ctx);
     }
 
@@ -81,26 +83,27 @@ public class Listener extends MHDLBaseListener {
 
     @Override
     public void enterConnection_end(MHDLParser.Connection_endContext ctx) {
-        //Defining the connection exit points
-        writer.println(indent + "<ArcConnectorProperties>");
-        indentInc();
+        for(int i = 0; i < ctx.IDENTIFIER().size(); i++){
+            writer.println(indent + "<ArcConnectorProperties>");
+            indentInc();
 
-        //!!DOES NOT WORK WITH MULTIPLE END POINTS
-        writer.print(indent + "<Component1>");
-        writer.print(ctx.getParent().getChild(1));
-        writer.println("</Component1>");
+            writer.print(indent + "<Component1>");
+            writer.print(ctx.getParent().getChild(conn));
+            writer.println("</Component1>");
 
-        writer.print(indent + "<Component2>");
-        writer.print(ctx.IDENTIFIER());
-        writer.println("</Component2>");
+            writer.print(indent + "<Component2>");
+            writer.print(ctx.IDENTIFIER().get(i));
+            writer.println("</Component2>");
 
-        indentDec();
-        writer.println(indent + "</ArcConnectorProperties>");
+            indentDec();
+            writer.println(indent + "</ArcConnectorProperties>");
+        }
     }
 
     @Override
     public void exitConnection_end(MHDLParser.Connection_endContext ctx) {
         super.exitConnection_end(ctx);
+        conn += 4;
     }
 
     public void indentInc() {

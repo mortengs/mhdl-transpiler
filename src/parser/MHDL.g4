@@ -12,6 +12,6 @@ components: 'COMPONENT LIST:'
     (IDENTIFIER 'OF' IDENTIFIER';' | IDENTIFIER ':')+
 ;
 
-connections: 'CONNECTION LIST:' IDENTIFIER 'CONNECTS TO' connection_end ';' 'END LIST;';
+connections: 'CONNECTION LIST:' (IDENTIFIER 'CONNECTS TO' connection_end ';')+ 'END LIST;';
 
-connection_end: (IDENTIFIER | IDENTIFIER ',' connection_end);
+connection_end: (IDENTIFIER | IDENTIFIER ',')+;

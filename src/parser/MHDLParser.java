@@ -300,9 +300,15 @@ public class MHDLParser extends Parser {
 	}
 
 	public static class ConnectionsContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(MHDLParser.IDENTIFIER, 0); }
-		public Connection_endContext connection_end() {
-			return getRuleContext(Connection_endContext.class,0);
+		public List<TerminalNode> IDENTIFIER() { return getTokens(MHDLParser.IDENTIFIER); }
+		public TerminalNode IDENTIFIER(int i) {
+			return getToken(MHDLParser.IDENTIFIER, i);
+		}
+		public List<Connection_endContext> connection_end() {
+			return getRuleContexts(Connection_endContext.class);
+		}
+		public Connection_endContext connection_end(int i) {
+			return getRuleContext(Connection_endContext.class,i);
 		}
 		public ConnectionsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -321,20 +327,33 @@ public class MHDLParser extends Parser {
 	public final ConnectionsContext connections() throws RecognitionException {
 		ConnectionsContext _localctx = new ConnectionsContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_connections);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(41);
 			match(T__9);
-			setState(42);
-			match(IDENTIFIER);
-			setState(43);
-			match(T__10);
-			setState(44);
-			connection_end();
-			setState(45);
-			match(T__7);
-			setState(46);
+			setState(47); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(42);
+				match(IDENTIFIER);
+				setState(43);
+				match(T__10);
+				setState(44);
+				connection_end();
+				setState(45);
+				match(T__7);
+				}
+				}
+				setState(49); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==IDENTIFIER );
+			setState(51);
 			match(T__11);
 			}
 		}
@@ -350,9 +369,9 @@ public class MHDLParser extends Parser {
 	}
 
 	public static class Connection_endContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(MHDLParser.IDENTIFIER, 0); }
-		public Connection_endContext connection_end() {
-			return getRuleContext(Connection_endContext.class,0);
+		public List<TerminalNode> IDENTIFIER() { return getTokens(MHDLParser.IDENTIFIER); }
+		public TerminalNode IDENTIFIER(int i) {
+			return getToken(MHDLParser.IDENTIFIER, i);
 		}
 		public Connection_endContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -371,29 +390,38 @@ public class MHDLParser extends Parser {
 	public final Connection_endContext connection_end() throws RecognitionException {
 		Connection_endContext _localctx = new Connection_endContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_connection_end);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(52);
+			setState(56); 
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
-			case 1:
+			_la = _input.LA(1);
+			do {
 				{
-				setState(48);
-				match(IDENTIFIER);
+				setState(56);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
+				case 1:
+					{
+					setState(53);
+					match(IDENTIFIER);
+					}
+					break;
+				case 2:
+					{
+					setState(54);
+					match(IDENTIFIER);
+					setState(55);
+					match(T__12);
+					}
+					break;
 				}
-				break;
-			case 2:
-				{
-				setState(49);
-				match(IDENTIFIER);
-				setState(50);
-				match(T__12);
-				setState(51);
-				connection_end();
 				}
-				break;
-			}
+				setState(58); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==IDENTIFIER );
 			}
 		}
 		catch (RecognitionException re) {
@@ -408,21 +436,23 @@ public class MHDLParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\229\4\2\t\2\4\3\t"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\22?\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2\7\2\20\n\2\f\2\16\2\23\13\2\3\2"+
 		"\3\2\3\2\3\2\3\3\3\3\3\3\3\3\6\3\35\n\3\r\3\16\3\36\3\4\3\4\3\4\3\4\3"+
-		"\4\3\4\3\4\6\4(\n\4\r\4\16\4)\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6"+
-		"\3\6\5\6\67\n\6\3\6\2\2\7\2\4\6\b\n\2\3\3\2\5\68\2\f\3\2\2\2\4\30\3\2"+
-		"\2\2\6 \3\2\2\2\b+\3\2\2\2\n\66\3\2\2\2\f\r\7\3\2\2\r\21\7\20\2\2\16\20"+
-		"\5\4\3\2\17\16\3\2\2\2\20\23\3\2\2\2\21\17\3\2\2\2\21\22\3\2\2\2\22\24"+
-		"\3\2\2\2\23\21\3\2\2\2\24\25\5\6\4\2\25\26\5\b\5\2\26\27\7\2\2\3\27\3"+
-		"\3\2\2\2\30\34\7\4\2\2\31\32\7\20\2\2\32\33\t\2\2\2\33\35\7\7\2\2\34\31"+
-		"\3\2\2\2\35\36\3\2\2\2\36\34\3\2\2\2\36\37\3\2\2\2\37\5\3\2\2\2 \'\7\b"+
-		"\2\2!\"\7\20\2\2\"#\7\t\2\2#$\7\20\2\2$(\7\n\2\2%&\7\20\2\2&(\7\13\2\2"+
-		"\'!\3\2\2\2\'%\3\2\2\2()\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\7\3\2\2\2+,\7\f"+
-		"\2\2,-\7\20\2\2-.\7\r\2\2./\5\n\6\2/\60\7\n\2\2\60\61\7\16\2\2\61\t\3"+
-		"\2\2\2\62\67\7\20\2\2\63\64\7\20\2\2\64\65\7\17\2\2\65\67\5\n\6\2\66\62"+
-		"\3\2\2\2\66\63\3\2\2\2\67\13\3\2\2\2\7\21\36\')\66";
+		"\4\3\4\3\4\6\4(\n\4\r\4\16\4)\3\5\3\5\3\5\3\5\3\5\3\5\6\5\62\n\5\r\5\16"+
+		"\5\63\3\5\3\5\3\6\3\6\3\6\6\6;\n\6\r\6\16\6<\3\6\2\2\7\2\4\6\b\n\2\3\3"+
+		"\2\5\6@\2\f\3\2\2\2\4\30\3\2\2\2\6 \3\2\2\2\b+\3\2\2\2\n:\3\2\2\2\f\r"+
+		"\7\3\2\2\r\21\7\20\2\2\16\20\5\4\3\2\17\16\3\2\2\2\20\23\3\2\2\2\21\17"+
+		"\3\2\2\2\21\22\3\2\2\2\22\24\3\2\2\2\23\21\3\2\2\2\24\25\5\6\4\2\25\26"+
+		"\5\b\5\2\26\27\7\2\2\3\27\3\3\2\2\2\30\34\7\4\2\2\31\32\7\20\2\2\32\33"+
+		"\t\2\2\2\33\35\7\7\2\2\34\31\3\2\2\2\35\36\3\2\2\2\36\34\3\2\2\2\36\37"+
+		"\3\2\2\2\37\5\3\2\2\2 \'\7\b\2\2!\"\7\20\2\2\"#\7\t\2\2#$\7\20\2\2$(\7"+
+		"\n\2\2%&\7\20\2\2&(\7\13\2\2\'!\3\2\2\2\'%\3\2\2\2()\3\2\2\2)\'\3\2\2"+
+		"\2)*\3\2\2\2*\7\3\2\2\2+\61\7\f\2\2,-\7\20\2\2-.\7\r\2\2./\5\n\6\2/\60"+
+		"\7\n\2\2\60\62\3\2\2\2\61,\3\2\2\2\62\63\3\2\2\2\63\61\3\2\2\2\63\64\3"+
+		"\2\2\2\64\65\3\2\2\2\65\66\7\16\2\2\66\t\3\2\2\2\67;\7\20\2\289\7\20\2"+
+		"\29;\7\17\2\2:\67\3\2\2\2:8\3\2\2\2;<\3\2\2\2<:\3\2\2\2<=\3\2\2\2=\13"+
+		"\3\2\2\2\t\21\36\')\63:<";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
