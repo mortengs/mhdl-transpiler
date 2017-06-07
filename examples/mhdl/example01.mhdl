@@ -1,0 +1,13 @@
+DEFINE EX0
+
+ENTITY LIST:
+    ent1 WITHOUT CONTROL;
+
+COMPONENT LIST:
+    mix1 OF Mixer;
+    comp2 OF lib2;
+
+CONNECTION LIST:
+    conn1 CONNECTS TO con2;
+END LIST;
+

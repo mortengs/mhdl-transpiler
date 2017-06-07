@@ -1,172 +1,119 @@
 <Architecture>
-    <ID>Test pg.91</ID>
-    <Size>
-        <Width>100</Width>
-        <Height>100</Height>
-    </Size>
+    <ID>E91</ID>
     <ListOfArcComponents>
         <ArcComponentProperties>
-            <ID>Source1</ID>
-            <ArcComponentType>Input</ArcComponentType>
+            <ID>s1</ID>
+            <ArComponentType>Input</ArcComponentType>
         </ArcComponentProperties>
         <ArcComponentProperties>
-            <ID>Source2</ID>
-            <ArcComponentType>Input</ArcComponentType>
+            <ID>s2</ID>
+            <ArComponentType>Input</ArcComponentType>
         </ArcComponentProperties>
         <ArcComponentProperties>
-            <ID>Source3</ID>
-            <ArcComponentType>Input</ArcComponentType>
+            <ID>o1</ID>
+            <ArComponentType>Output</ArcComponentType>
         </ArcComponentProperties>
         <ArcComponentProperties>
-            <ID>Out1</ID>
-            <ArcComponentType>Output</ArcComponentType>
+            <ID>o5</ID>
+            <ArComponentType>Output</ArcComponentType>
         </ArcComponentProperties>
         <ArcComponentProperties>
-            <ID>Out2</ID>
-            <ArcComponentType>Output</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Out3</ID>
-            <ArcComponentType>Output</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Out4</ID>
-            <ArcComponentType>Output</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Out5</ID>
-            <ArcComponentType>Output</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Mixer1</ID>
-            <ArcComponentType>Mixer</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Mixer2</ID>
-            <ArcComponentType>Mixer</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Mixer3</ID>
-            <ArcComponentType>Mixer</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Mixer4</ID>
-            <ArcComponentType>Mixer</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Heater1</ID>
-            <ArcComponentType>Heater</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Heater2</ID>
-            <ArcComponentType>Heater</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Heater3</ID>
-            <ArcComponentType>Heater</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Heater4</ID>
-            <ArcComponentType>Heater</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Heater5</ID>
-            <ArcComponentType>Heater</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Detector1</ID>
-            <ArcComponentType>Detector</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Detector2</ID>
-            <ArcComponentType>Detector</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Detector3</ID>
-            <ArcComponentType>Detector</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Detector4</ID>
-            <ArcComponentType>Detector</ArcComponentType>
-        </ArcComponentProperties>
-        <ArcComponentProperties>
-            <ID>Detector5</ID>
-            <ArcComponentType>Detector</ArcComponentType>
+            <ID>heat4</ID>
+            <ArComponentType>Heater</ArcComponentType>
         </ArcComponentProperties>
     </ListOfArcComponents>
     <ListOfArcConnectors>
         <ArcConnectorProperties>
-            <Component1>Source1</Component1>
-            <Component2>Mixer1</Component2>
+            <Component1>s1</Component1>
+            <Component2>mix1</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Source1</Component1>
-            <Component2>Mixer4</Component2>
+            <Component1>s1</Component1>
+            <Component2>mix4</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Source2</Component1>
-            <Component2>Mixer1</Component2>
+            <Component1>s2</Component1>
+            <Component2>mix1</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Source2</Component1>
-            <Component2>Mixer2</Component2>
+            <Component1>s2</Component1>
+            <Component2>mix2</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Source3</Component1>
-            <Component2>Mixer3</Component2>
+            <Component1>s3</Component1>
+            <Component2>mix3</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Source3</Component1>
-            <Component2>Mixer2</Component2>
+            <Component1>s3</Component1>
+            <Component2>mix2</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Mixer1</Component1>
-            <Component2>Mixer3</Component2>
+            <Component1>mix1</Component1>
+            <Component2>mix3</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Mixer2</Component1>
-            <Component2>Heater1</Component2>
+            <Component1>mix2</Component1>
+            <Component2>heat1</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Mixer2</Component1>
-            <Component2>Heater2</Component2>
+            <Component1>mix2</Component1>
+            <Component2>heat2</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Mixer2</Component1>
-            <Component2>Heater3</Component2>
+            <Component1>mix2</Component1>
+            <Component2>heat3</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Mixer2</Component1>
-            <Component2>Heater4</Component2>
+            <Component1>mix2</Component1>
+            <Component2>heat4</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Mixer3</Component1>
-            <Component2>Mixer4</Component2>
+            <Component1>mix3</Component1>
+            <Component2>mix4</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Mixer4</Component1>
-            <Component2>Heater5</Component2>
+            <Component1>mix4</Component1>
+            <Component2>heat5</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Heater1</Component1>
-            <Component2>Detector1</Component2>
+            <Component1>heat1</Component1>
+            <Component2>det1</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Heater2</Component1>
-            <Component2>Detector2</Component2>
+            <Component1>heat2</Component1>
+            <Component2>det2</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Heater3</Component1>
-            <Component2>Detector3</Component2>
+            <Component1>heat3</Component1>
+            <Component2>det3</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Heater4</Component1>
-            <Component2>Detector4</Component2>
+            <Component1>heat4</Component1>
+            <Component2>det4</Component2>
         </ArcConnectorProperties>
         <ArcConnectorProperties>
-            <Component1>Heater5</Component1>
-            <Component2>Detector5</Component2>
+            <Component1>heat5</Component1>
+            <Component2>det5</Component2>
+        </ArcConnectorProperties>
+        <ArcConnectorProperties>
+            <Component1>det1</Component1>
+            <Component2>o1</Component2>
+        </ArcConnectorProperties>
+        <ArcConnectorProperties>
+            <Component1>det2</Component1>
+            <Component2>o2</Component2>
+        </ArcConnectorProperties>
+        <ArcConnectorProperties>
+            <Component1>det3</Component1>
+            <Component2>o3</Component2>
+        </ArcConnectorProperties>
+        <ArcConnectorProperties>
+            <Component1>det4</Component1>
+            <Component2>o4</Component2>
+        </ArcConnectorProperties>
+        <ArcConnectorProperties>
+            <Component1>det5</Component1>
+            <Component2>o5</Component2>
         </ArcConnectorProperties>
     </ListOfArcConnectors>
 </Architecture>
- 

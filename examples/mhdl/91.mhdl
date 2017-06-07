@@ -1,10 +1,45 @@
-DEFINE 91
+DEFINE E91
 
-COMPONENT mix1 is MIXER
-	of stdlib
+COMPONENT LIST:
+        s1 OF Input;
+	s2 OF Input;
+	s3 OF Input;
+	o1 OF Output;	
+        o2 OF Output;
+	o3 OF Output;
+        o4 OF Output;
+	o5 OF Output;
+	mix1 OF Mixer;
+	mix2 OF Mixer;
+	mix3 OF Mixer;
+	mix4 OF Mixer;
+	heat1 OF Heater;
+	heat2 OF Heater;
+	heat3 OF Heater;
+	heat4 OF Heater;
+	heat5 OF Heater;
+	det1 OF Detector;
+	det2 OF Detector;
+	det3 OF Detector;
+	det4 OF Detector;
+	det5 OF Detector;
 
-CONNECTIONLIST:
-	input1 CONNECTS TO mix1;
-	input2 CONNECTS TO mix1;
-	mix1 CONNECTS TO output1;
+CONNECTION LIST:
+	s1 CONNECTS TO mix1,mix4;
+	s2 CONNECTS TO mix1,mix2;
+	s3 CONNECTS TO mix3,mix2;
+	mix1 CONNECTS TO mix3;
+	mix2 CONNECTS TO heat1,heat2,heat3,heat4;
+	mix3 CONNECTS TO mix4;
+	mix4 CONNECTS TO heat5;
+	heat1 CONNECTS TO det1;
+	heat2 CONNECTS TO det2;
+	heat3 CONNECTS TO det3;
+	heat4 CONNECTS TO det4;
+	heat5 CONNECTS TO det5;
+	det1 CONNECTS TO o1;
+	det2 CONNECTS TO o2;
+	det3 CONNECTS TO o3;
+	det4 CONNECTS TO o4;
+	det5 CONNECTS TO o5;
 END LIST;

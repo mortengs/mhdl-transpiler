@@ -1,11 +1,11 @@
 <Architecture>
     <ID>EX0</ID>
-<ListOfArcComponents>
+    <ListOfArcComponents>
+        [comp1, lib1]
         <ListOfArcConnectors>
             <ArcConnectorProperties>
                 <Component1>conn1</Component1>
                 <Component2>con2</Component2>
             </ArcConnectorProperties>
         </ListOfArcConnectors>
-OBOOO
 </Architecture>
