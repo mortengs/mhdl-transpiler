@@ -23,6 +23,7 @@ COMPONENT LIST:
 	det3 OF Detector;
 	det4 OF Detector;
 	det5 OF Detector;
+END LIST;
 
 CONNECTION LIST:
 	s1 CONNECTS TO mix1,mix4;
@@ -43,3 +44,4 @@ CONNECTION LIST:
 	det4 CONNECTS TO o4;
 	det5 CONNECTS TO o5;
 END LIST;
+END DEFINE;
