@@ -4,9 +4,9 @@ IDENTIFIER: [a-zA-Z_][a-zA-Z0-9_]*;
 INTEGER: '-'?[0-9]+;
 WS        : [ \n\t\r]+ -> skip;
 
-design: 'DEFINE' IDENTIFIER entity* components connections 'END DEFINE;' EOF;
+design: 'DEFINE' IDENTIFIER ':' entity* components connections 'END DEFINE;' EOF;
 
-entity: 'ENTITY LIST:' (IDENTIFIER ('WITH' | 'WITHOUT') 'CONTROL;')+;
+entity: 'ENTITY LIST:' (IDENTIFIER 'OF TYPE' IDENTIFIER ';')+ 'END LIST;';
 
 components: 'COMPONENT LIST:'
     (IDENTIFIER 'OF' IDENTIFIER';' | IDENTIFIER ':')+

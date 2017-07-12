@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 /**
  * Created by mortengs on 6/2/17.
  */
-public class Listener extends MHDLBaseListener {
+public class Synthesizer extends MHDLBaseListener {
     PrintWriter writer;
     private String indent = "";
     private int conn = 1;
@@ -47,7 +47,7 @@ public class Listener extends MHDLBaseListener {
         //Check to see if the component exists in the library?
         writer.println(indent + "<ListOfArcComponents>");
         indentInc();
-        for(int i = 0; i < ctx.IDENTIFIER().size(); i += i +2){
+        for(int i = 0; i < ctx.IDENTIFIER().size(); i += 2){
             writer.println(indent + "<ArcComponentProperties>");
             indentInc();
             writer.print(indent +"<ID>");

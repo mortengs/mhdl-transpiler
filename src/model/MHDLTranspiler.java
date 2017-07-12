@@ -1,15 +1,14 @@
 package model;
 
-import org.antlr.v4.runtime.ANTLRFileStream;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import parser.MHDLLexer;
 import parser.MHDLParser;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 
 
 /**
@@ -17,13 +16,12 @@ import java.io.PrintWriter;
  */
 
 
-public class main {
+public class MHDLTranspiler {
 
     public static void main(String args[]) {
         File file;
         if(args.length > 0) {
             //Get the file
-            System.out.println(args[0]);
             file = new File(args[0]);
             try {
                 System.out.println("----Streaming----");
@@ -39,19 +37,18 @@ public class main {
     }
 
     private static void transpile(File file) throws IOException {
-        ANTLRFileStream f1 = new ANTLRFileStream(file.toString());
+        CharStream f1 = CharStreams.fromFileName(file.getAbsolutePath());
         MHDLLexer lex = new MHDLLexer(f1);
         CommonTokenStream tokens = new CommonTokenStream(lex);
         MHDLParser parser = new MHDLParser(tokens);
 
         MHDLParser.DesignContext designContext = parser.design();
         ParseTreeWalker walker = new ParseTreeWalker();
-        Listener liser = new Listener();
+        Synthesizer liser = new Synthesizer();
 
         System.out.println(file.getName().substring(0,file.getName().length()-5) + ".xml");
-        String dir = "examples/xml/";
 
-        liser.writer = new PrintWriter( dir + file.getName().substring(0,file.getName().length()-5) + ".xml");
+        liser.writer = new PrintWriter( file.getName().substring(0,file.getName().length()-5) + ".xml");
 
         walker.walk(liser,designContext);
     }
@@ -59,7 +56,12 @@ public class main {
     private static void stream(File file) throws IOException {
         StringBuilder out = new StringBuilder();
         String sep = System.lineSeparator();
-        out.append(new ANTLRFileStream(file.toString())).append(sep);
+        try (BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath()))) {
+            String line = null;
+            while ((line = br.readLine()) != null) {
+                out.append(line).append(sep);
+            }
+        }
         System.out.println(out.toString());
     }
 }

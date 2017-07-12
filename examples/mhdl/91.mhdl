@@ -1,13 +1,13 @@
 DEFINE E91
 
 COMPONENT LIST:
-        s1 OF Input;
+    s1 OF Input;
 	s2 OF Input;
 	s3 OF Input;
 	o1 OF Output;	
-        o2 OF Output;
+    o2 OF Output;
 	o3 OF Output;
-        o4 OF Output;
+    o4 OF Output;
 	o5 OF Output;
 	mix1 OF Mixer;
 	mix2 OF Mixer;

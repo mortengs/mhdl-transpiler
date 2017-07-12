@@ -1,4 +1,4 @@
-// Generated from MHDL.g4 by ANTLR 4.6
+// Generated from /Users/Jesper/Documents/DTU/Bachelor thesis/mhdl-transpiler/src/parser/MHDL.g4 by ANTLR 4.7
 package parser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
